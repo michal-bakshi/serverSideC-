@@ -21,7 +21,7 @@ public partial class ToDoDbContext : DbContext
     public virtual DbSet<User> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseMySql("Server=localhost;Port=3306;User=root;Password=mysqlmichal3277;Database=mynewschema;", 
+        => optionsBuilder.UseMySql("Server=bjkelasuimbhk5uk1llj-mysql.services.clever-cloud.com;Port=3306;User=u16sbkz97rt4sygi;Password=NImuUmo0RkuRJG0FO9Tc;Database=bjkelasuimbhk5uk1llj;", 
         Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.40-mysql"));
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
