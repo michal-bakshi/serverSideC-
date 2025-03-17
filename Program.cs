@@ -75,8 +75,16 @@ app.MapGet("/", () => "Hello World!");
 
 app.MapGet("/get", async (ToDoDbContext context) =>
 {
-    var items = await context.Items.ToListAsync();
-    return Results.Ok(items);
+    try
+    {
+        var items = await context.Items.ToListAsync();
+        return Results.Ok(items);
+    }
+    catch (Exception ex)
+    {
+        return Results.Problem(ex.Message);
+    }
+
 });
 app.MapPost("/", async(ToDoDbContext context,Item newItem) => {
         await context.Items.AddAsync(newItem);
